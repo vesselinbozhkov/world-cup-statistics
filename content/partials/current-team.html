@@ -1,0 +1,59 @@
+<div class="col-sm-11 col-md-10 pull-left">
+	<div class="grid row clearfix">
+		<img ng-src="{{team.logo}}" class="grid-item col-md-4 item-thumbnail">
+		<h1 class="grid-item col-md-8 section-title">{{team.name}}</h1>			
+	</div>
+	<div class="panel grid row clearfix">
+		<div class="panel-body">
+			<div><em>Year founded:&nbsp;&nbsp;</em><strong> {{team.yearFounded}}</strong></div>
+			<div><em>Adress:&nbsp;&nbsp;</em><strong>{{team.address}}</strong></div>
+			<div><em>Home stadium:&nbsp;&nbsp;</em><strong>{{team.homeStadium}}</strong></div>
+			<div><em>Stadium capacity:&nbsp;&nbsp;</em><strong>{{team.stadiumCapacity | number}}</strong></div>
+			<div>
+				<em>Matches:&nbsp;&nbsp;</em><strong>{{team.matchesPlayed}}&nbsp;&nbsp;</strong>
+				<em>Wins:&nbsp;&nbsp;</em><strong>{{team.wins}}&nbsp;&nbsp;</strong>
+				<em>Losses:&nbsp;&nbsp;</em><strong>{{team.losses}}&nbsp;&nbsp;</strong>
+				<em>Draws:&nbsp;&nbsp;</em><strong>{{team.draws}}&nbsp;&nbsp;</strong></div>
+			<div><em>Goals:&nbsp;&nbsp;</em><strong>{{team.goalsScored}} : {{team.goalsConceded}} ({{team.goalsDifference}})</strong></div>			
+		</div>
+	</div>
+
+	<div class="grid row clearfix">
+		<h4 class="grid-item col-md-5"><span class="glyphicon glyphicon-user"></span> Players:</h4>
+		<p class="pull-right grid-item col-md-7">sort by: 
+			<em class="btn" ng-click="orderValue = 'fullName'; invert = !invert">name</em>|
+			<em class="btn" ng-click="orderValue = 'age'; invert = !invert">age</em>|
+			<em class="btn" ng-click="orderValue = 'height'; invert = !invert">height</em>|
+			<em class="btn" ng-click="orderValue = 'weight'; invert = !invert">weight</em>
+		</p>		
+	</div>
+
+	<table class="table table-striped">
+		<tr ng-repeat="player in team.players | orderBy : orderValue : invert ">
+			<td>
+				<a href="#/teams/{{team.name}}/{{player.shortName}}" class="btn btn-sm">
+					<strong>{{player.fullName}}</strong>  
+				</a>
+			</td>
+			<td>
+				<a href="#/teams/{{team.name}}/{{player.shortName}}" class="btn btn-sm">
+				</a>
+			</td>
+			<td>
+				<a href="#/teams/{{team.name}}/{{player.shortName}}" class="btn btn-sm">
+					<strong>{{player.age}} years</strong>
+				</a>
+			</td>
+			<td>
+				<a href="#/teams/{{team.name}}/{{player.shortName}}" class="btn btn-sm">
+					<strong>{{player.height}} cm</strong>
+				</a>
+			</td>
+			<td>
+				<a href="#/teams/{{team.name}}/{{player.shortName}}" class="btn btn-sm">
+					<strong>{{player.weight}} kg</strong>
+				</a>
+			</td>
+		</tr>
+	</table>
+</div>

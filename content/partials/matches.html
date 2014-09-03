@@ -1,0 +1,36 @@
+<div class="col-sm-11 col-md-10 pull-left">
+
+	<h1>Matches</h1>
+	<div class="row">
+		<div class="col-md-4 pull-right">
+			<div class="input-group" style="margin-bottom: 40px;">
+				<span class="input-group-addon">
+			        <span class="glyphicon glyphicon-search"></span>
+				</span>
+				<input ng-model="filter" type="text" class="form-control" placeholder="search by team name">
+			</div>
+		</div>
+	</div>
+
+
+	<div ng-repeat="match in matches | filter : filter" class="row">
+		<div class="col-md-12 pull-left">
+			<small>{{match.date | date : 'dd MMMM HH:mm'}}</small>
+		</div>
+		<a href="#/matches/{{match.homeTeam.name}}+{{match.awayTeam.name}}+{{match.id}}">
+			<div class="list-group-item btn btn-outline-inverse clearfix">
+				<div class="col-md-5 text-left">
+					<img ng-src="../db/teams/flags/{{match.homeTeam.name}}.png" title="{{match.homeTeam.name}}">
+					<strong>{{match.homeTeam.name}}</strong>
+				</div>
+				<div class="col-md-5 text-left">
+					<img ng-src="../db/teams/flags/{{match.awayTeam.name}}.png" title="{{match.awayTeam.name}}">
+					<strong>{{match.awayTeam.name}}</strong>					
+				</div>
+				<div class="col-md-2">
+					<h4>{{match.homeTeam.goals}} : {{match.awayTeam.goals}}</h4>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>

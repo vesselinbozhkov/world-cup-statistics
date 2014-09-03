@@ -1,0 +1,28 @@
+<div class="col-sm-11 col-md-10 pull-left">
+	<h1 class="section-title">Teams</h1>
+	<div class="row">
+		<div class="col-md-4 pull-right">
+			<div class="input-group">
+				<span class="input-group-addon">
+			        <span class="glyphicon glyphicon-search"></span>
+				</span>
+				<input ng-model="filter" type="text" class="form-control" placeholder="filter teams">
+			</div>
+		</div>
+	</div>			
+	<div class="grid row clearfix clearfix-for-2cols">
+		<p>sort by: 
+		<em class="btn" ng-click="orderValue = 'group'; reverse = !reverse">group</em>|
+		<em class="btn" ng-click="orderValue = 'name'; reverse = !reverse">name</em></p>
+		<ul ng-repeat="team in teams | orderBy : orderValue : reverse | filter : {'name' : filter}" class="grid-item col-md-6 list-group">
+			<a href="#/teams/{{team.name}}">
+				<li class="list-group-item btn btn-outline-inverse btn-md">
+					<img ng-src="../db/teams/flags/{{team.name}}.png" title="{{team.name}}">
+					<strong>{{team.name}}</strong>
+					<small> group {{team.group}}</small>
+				</li>
+			</a>
+		</ul>
+
+	</div>
+</div>

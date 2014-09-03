@@ -1,0 +1,20 @@
+<div class="col-sm-11 col-md-10 pull-left">
+	<div class="grid row clearfix">
+		<img ng-src="{{player.image}}" title="{{player.image}}" class="img-circle grid-item col-md-4">
+		<h1 class="grid-item col-md-8 section-title">{{player.fullName}}</h1>			
+	</div>
+	<div class="panel grid row clearfix">
+		<div class="panel-body">
+			<div><em>Short name:&nbsp;&nbsp;</em><strong>{{player.shortName}}</strong></div>
+			<div><em>Nationality:&nbsp;&nbsp;</em><strong>{{player.nationality}}</strong></div>
+			<div><em>Birthdate:&nbsp;&nbsp;</em><strong>{{player.birthDate | date : yyyy:MMMMM:dd}}</strong></div>
+			<div><em>Age:&nbsp;&nbsp;</em><strong>{{player.age}}</strong></div>
+			<div><em>Country of birth:&nbsp;&nbsp;</em><strong>{{player.birthCountry}}</strong></div>
+			<div><em>City of birth:&nbsp;&nbsp;</em><strong>{{player.birthCity}}</strong></div>
+			<div><em>Height:&nbsp;&nbsp;</em><strong>{{player.height}} cm</strong></div>
+			<div><em>Weight:&nbsp;&nbsp;</em><strong>{{player.weight}} kg</strong></div>
+			<div><em>Goals:&nbsp;&nbsp;</em><strong>{{player.goals}}</strong></div>
+			<div><em>Assists:&nbsp;&nbsp;</em><strong>{{player.assists}}</strong></div>
+		</div>
+	</div>
+</div>

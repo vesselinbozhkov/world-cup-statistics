@@ -1,0 +1,56 @@
+<div class="col-sm-11 col-md-12 pull-left">
+	<h1>Knockout stage</h1>
+	<div class="row clearfix-for-1cols">
+		<h4 class="row col-md-4">Round of 16</h4>	
+		<h4 class="col-md-4">Quarterfinals</h4>	
+		<h4 class="col-md-4">Semifinals</h4>	
+	</div>
+	<div class="col-md-12">
+		<ul class="grid-item list-group row clearfix-for-1cols col-md-4" id="roundOf16">
+			<a href="#/matches/{{match.homeTeam.name}}+{{match.awayTeam.name}}+{{match.id}}" ng-repeat="match in roundOf16">
+				<li class="col-md-9 list-group-item btn btn-outline-inverse"><small>{{match.homeTeam.name}} - {{match.awayTeam.name}} 
+				{{match.homeTeam.goals}}:{{match.awayTeam.goals}} 
+					<em ng-if="match.penalties == true">
+						({{match.homeTeam.penalties}}:{{match.awayTeam.penalties}})
+					</em></small>
+				</li>
+			</a>
+		</ul>
+
+		<ul class="grid-item row list-group clearfix-for-1cols col-md-4" id="quarterfinals">
+			<a href="#/matches/{{match.homeTeam.name}}+{{match.awayTeam.name}}+{{match.id}}" ng-repeat="match in roundOf8">
+				<li class="col-md-9 list-group-item btn btn-outline-inverse"><small>{{match.homeTeam.name}} - {{match.awayTeam.name}} 
+				{{match.homeTeam.goals}}:{{match.awayTeam.goals}} 
+					<em ng-if="match.penalties == true">
+						({{match.homeTeam.penalties}}:{{match.awayTeam.penalties}})
+					</em></small>
+				</li>
+			</a>
+		</ul>
+
+		<ul class="grid-item row list-group clearfix-for-1cols col-md-4" id="semifinals">
+			<a href="#/matches/{{match.homeTeam.name}}+{{match.awayTeam.name}}+{{match.id}}" ng-repeat="match in roundOf4">
+				<li class="col-md-9 list-group-item btn btn-outline-inverse"><small>{{match.homeTeam.name}} - {{match.awayTeam.name}} 
+				{{match.homeTeam.goals}}:{{match.awayTeam.goals}} 
+					<em ng-if="match.penalties == true">
+						({{match.homeTeam.penalties}}:{{match.awayTeam.penalties}})
+					</em></small>
+				</li>
+			</a>
+		</ul>
+	</div>
+
+		<h4 class="row col-md-4">Third place</h4>	
+		<div class="col-md-4"></div>
+		<h4 class="row col-md-4">Final</h4>
+		<a href="#/matches/{{thirdPlaceMatch.homeTeam.name}}+{{thirdPlaceMatch.awayTeam.name}}+{{thirdPlaceMatch.id}}">
+			<div class="row col-md-4 list-group-item btn btn-outline-inverse" style="margin-bottom: 100px;">{{thirdPlaceMatch.homeTeam.name}} - {{thirdPlaceMatch.awayTeam.name}}</div>			
+		</a>	
+
+		<div class="col-md-4"></div>
+		<a href="#/matches/{{grandeFinale.homeTeam.name}}+{{grandeFinale.awayTeam.name}}+{{grandeFinale.id}}">
+			<div class="row col-md-4 list-group-item btn btn-outline-inverse">{{grandeFinale.homeTeam.name}} - {{grandeFinale.awayTeam.name}}</div>			
+		</a>
+	
+
+</div>

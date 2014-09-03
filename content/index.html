@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html ng-app="worldCupApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>WORLD CUP | Statistics</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="assets/images/other_images/logo.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="assets/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- owl carousel css -->
+    <link href="assets/js/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="assets/js/owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="assets/js/owl-carousel/owl.transitions.css" rel="stylesheet">
+    <!-- intro animations -->
+    <link href="assets/js/wow/animate.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link href="assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="background-image-overlay"></div>
+
+    <div id="outer-background-container" data-default-background-img="assets/images/other_images/bg5.jpg" style="background-image:url(assets/images/other_images/bg5.jpg);"></div>
+    <!-- end: #outer-background-container -->    
+
+    <!-- Outer Container -->
+    <div id="outer-container">
+
+      <!-- Left Sidebar -->
+      <section id="left-sidebar">
+        
+        <div class="logo">
+          <img src="assets/images/other_images/tournament.png" alt="World Cup Stats">
+        </div><!-- .logo -->
+
+        <!-- Menu Icon for smaller viewports -->
+        <div id="mobile-menu-icon" class="visible-xs" onClick="toggle_main_menu();"><span class="glyphicon glyphicon-th"></span></div>
+
+        <ul id="main-menu">
+          <li 
+            class="menu-item" 
+            ng-class="currSelection == 'tournament' ? 'active' : ''">
+              <a href="#/tournament">tournament</a>
+          </li>
+          <li 
+            class="menu-item" 
+            ng-class="currSelection == 'knockout' ? 'active' : ''">
+              <a href="#/knockout">knockout</a>
+          </li>
+          <li 
+            class="menu-item" 
+            ng-class="currSelection == 'teams' ? 'active' : ''">
+              <a href="#/teams">teams</a>
+          </li>
+          <li 
+            class="menu-item" 
+            ng-class="currSelection == 'matches' ? 'active' : ''">
+              <a href="#/matches">matches</a>
+          </li>
+          <li 
+            class="menu-item" 
+            ng-class="currSelection == 'stadiums' ? 'active' : ''">
+              <a href="#/stadiums">stadiums</a>
+          </li>
+          <li 
+            class="menu-item" 
+            ng-class="currSelection == 'referees' ? 'active' : ''">
+              <a href="#/referees">referees</a>
+          </li>
+          <li 
+            class="menu-item" 
+            ng-class="currSelection == 'statistics' ? 'active' : ''">
+              <a href="#/statistics">statistics</a>
+          </li>
+
+        </ul><!-- #main-menu -->
+
+      </section><!-- #left-sidebar -->
+      <!-- end: Left Sidebar -->
+
+      <section id="main-content" class="clearfix fade" ng-view>
+
+      </section><!-- #main-content -->
+
+      <!-- Footer -->
+      <section id="footer">
+      
+
+        <!-- copyright text -->
+        <div class="footer-text-line">&copy; 2014 | Vesselin Bozhkov</div>
+      </section>
+      <!-- end: Footer -->      
+
+    </div><!-- #outer-container -->
+    <!-- end: Outer Container -->
+
+    <!-- Modal -->
+    <!-- DO NOT MOVE, EDIT OR REMOVE - this is needed in order for popup content to be populated in it -->
+    <div class="modal fade" id="common-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <div class="modal-body">
+          </div><!-- .modal-body -->
+        </div><!-- .modal-content -->
+      </div><!-- .modal-dialog -->
+    </div><!-- .modal -->    
+
+    <!-- Javascripts
+    ================================================== -->
+
+    <!-- Jquery and Bootstrap JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Easing - for transitions and effects -->
+    <script src="assets/js/jquery.easing.1.3.js"></script>
+
+    
+
+    <!-- background image strech script -->
+    <script src="assets/js/jquery.backstretch.min.js"></script>
+    <!-- background image fix for IE 9 or less
+       - use same background as set above to <body> -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      jQuery("#outer-background-container").backstretch("assets/images/other_images/bg5.jpg");
+    });
+    </script> 
+    <![endif]-->  
+
+    <!-- detect mobile browsers -->
+    <script src="assets/js/detectmobilebrowser.js"></script>
+
+    <!-- owl carousel js -->
+    <script src="assets/js/owl-carousel/owl.carousel.min.js"></script>
+
+    <!-- intro animations -->
+    <script src="assets/js/wow/wow.min.js"></script>
+
+    <!-- Custom functions for this theme -->
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/custom-functions.js"></script>
+    <!-- // <script src="assets/js/initialise-functions.js"></script> -->
+    <!-- IE9 form fields placeholder fix -->
+    <!--[if lt IE 9]>
+    <script>contact_form_IE9_placeholder_fix();</script>
+    <![endif]-->  
+    <script src="../lb/angular.min.js"></script>
+    <script src="../lb/Chart.js"></script>
+    <script src="../lb/angular-route.js"></script>
+    <script src="../lb/angular-animate.min.js"></script>
+    <script src="scripts/module.js"></script>
+
+    <script src="scripts/controllers/tournament-ctrl.js"></script>
+    <script src="scripts/controllers/tournament-knockout-ctrl.js"></script>
+
+    <script src="scripts/controllers/teams-list-ctrl.js"></script>
+    <script src="scripts/controllers/current-team-ctrl.js"></script>
+    <script src="scripts/controllers/current-player-ctrl.js"></script>
+
+    <script src="scripts/controllers/matches-list-ctrl.js"></script>
+    <script src="scripts/controllers/current-match-ctrl.js"></script>
+
+    <script src="scripts/controllers/stadiums-list-ctrl.js"></script>
+    <script src="scripts/controllers/current-stadium-ctrl.js"></script>
+
+    <script src="scripts/controllers/referee-list-ctrl.js"></script>
+    <script src="scripts/controllers/current-referee-ctrl.js"></script>
+
+    <script src="scripts/controllers/statistics-ctrl.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<div class="col-sm-11 col-md-12 pull-left">
+	<h1>Referees</h1>
+	<p class="pull-right">sort by: 
+		<em class="btn" ng-click="sort = 'name'; reverse = !reverse">name</em>|
+		<em class="btn" ng-click="sort = 'country'; reverse = !reverse">country</em>|
+		<em class="btn" ng-click="sort = 'zone'; reverse = !reverse">zone</em>|
+		<em class="btn" ng-click="sort = 'role'; reverse = !reverse">role</em>
+	</p>
+	<table class="table table-striped table-condensed">
+		<tr ng-repeat="referee in referees | orderBy:sort:reverse">
+			<td>
+				<a href="#/referees/{{referee.name}}" class="btn btn-sm"><strong>{{referee.name}}</strong></a>
+			</td>
+			<td>
+				<a href="#/referees/{{referee.name}}" class="btn">
+					<img ng-src="../db/teams/flags/{{referee.country}}.png" title="{{referee.country}}">
+					<strong>{{referee.country}}
+				</strong></a>
+			</td>
+			<td><a href="#/referees/{{referee.name}}" class="btn"><strong>{{referee.zone}}</strong></a></td>
+			<td><a href="#/referees/{{referee.name}}" class="btn"><strong>{{referee.role}}</strong></a></td>
+			<!-- <td><a href="#/referees/{{referee.name}}" >{{referee.birthdate}}</a></td> -->
+		</tr>
+	</table>
+</div>

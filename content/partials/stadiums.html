@@ -1,0 +1,17 @@
+<div class="col-sm-11 col-md-12 pull-left">
+	<h1>Stadiums</h1>
+
+	<div class="col-md-5 feature-col" ng-repeat="stadium in stadiums | orderBy : 'capacity':true">
+		<a href="#/stadiums/{{stadium.name}}"  class="thumbnail panel text-center">
+			<div class="stadium-holder">
+				<div class="image-container">
+					<img ng-src="../db/stadiums/{{stadium.name}}.jpg" class="img-rounded" width="200" height="160">
+				</div>
+				<div class="caption">
+					<h5>{{stadium.name}}</h5>
+					<strong>Capacity:</strong> <em>{{stadium.capacity | number}}</em>
+				</div>
+			</div>
+		</a>		
+	</div>
+</div>

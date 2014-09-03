@@ -1,0 +1,13 @@
+<div class="col-sm-11 col-md-10 pull-left">
+	<div class="grid row clearfix">
+		<img ng-src="../db/referees/{{photo}}.png" title="{{referee.name}}" class="img-rounded grid-item col-md-4">
+		<h1 class="grid-item col-md-8 section-title">{{referee.name}}</h1>			
+	</div>
+	<div class="panel grid row clearfix">
+		<div class="panel-body">
+			<div><em>Country:&nbsp;&nbsp;</em><strong>{{referee.country}}</strong></div>
+			<div><em>Zone:&nbsp;&nbsp;</em><strong>{{referee.zone}}</strong></div>
+			<div><em>Birth date:&nbsp;&nbsp;</em><strong>{{referee.birthdate | date : yyyy:MMMMM:dd}}</strong></div>
+		</div>
+	</div>
+</div>

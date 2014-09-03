@@ -1,0 +1,50 @@
+<div class="col-md-12">
+	<h4 class="col-md-3">Statistic for: </h4>
+	<h4 class="col-md-3">{{secondOptionHeader}}</h4>
+	<h4 ng-show="showThird" class="col-md-3">Option: </h4>
+	<h4 class="col-md-3">Graphic type: </h4>
+
+		<div class="col-md-12" id="statistics-container">
+			<select 
+				class="col-md-3 selectpicker"
+				data-style="btn-warning"
+				ng-change="showSecondOptions()"
+				ng-model="basicOption"
+				ng-options="option for option in basicOptions">
+			</select>
+
+			
+			<select
+				class="col-md-3 selectpicker"
+				data-style="btn-warning"
+				ng-change="showGraph()"
+				ng-model="secondOption"
+				ng-options="option for option in secondOptions"
+			>
+			</select>
+
+			<select
+				class="col-md-3 selectpicker"
+				data-style="btn-warning"
+				ng-show="showThird"
+				ng-change="showGraph()"
+				ng-model="thirdOption"
+				ng-options="option for option in specificTeamOptions"
+			>
+			</select>
+
+			<select
+				class="col-md-3 selectpicker"
+				data-style="btn-warning"
+				ng-change="showGraph()"
+				ng-model="diagramOption"
+				ng-options="option for option in diagramsOptions"
+			>
+			</select>			
+		</div>
+
+	<div id="canvas-container" class="col-md-12">
+		<canvas id="graphic-container" class="col-md-12"></canvas>
+	</div>
+</div>
+

@@ -1,0 +1,19 @@
+<div class="col-sm-11 col-md-10 pull-left">
+	<div class="grid row clearfix">
+		<img ng-src="../db/stadiums/{{stadiumFromRoute}}.jpg" title="{{stadiumFromRoute}}" class="img-rounded grid-item col-md-4">
+		<h1 class="grid-item col-md-8 section-title">{{stadium.name}}</h1>			
+	</div>
+
+	<div class="panel grid row clearfix">
+		<div class="panel-body">
+			<div><em>City:&nbsp;&nbsp;</em><strong>{{stadium.city}}</strong></div>
+			<div><em>State:&nbsp;&nbsp;</em><strong>{{stadium.state}}</strong></div>
+			<div><em>Capacity:&nbsp;&nbsp;</em><strong>{{stadium.capacity | number}}</strong></div>
+			<div><em>Renovated:&nbsp;&nbsp;</em><strong>{{stadium.renovated}} stadium</strong></div>
+		</div>
+	</div>
+
+	<div class="panel col-md-12" style="height: 400px; padding-top: 10px;">
+		<div id="map-holder" class="col-md-12" style="height: 380px;"></div>
+	</div>
+</div>

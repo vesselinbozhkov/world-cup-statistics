@@ -1,0 +1,27 @@
+<div class="col-sm-11 col-md-12 pull-left">
+	<h3 class="text-center">
+		<img ng-src="../db/teams/flags/{{match.homeTeam.name}}.png" alt="">
+			<strong style="color: {{homeColor}}">{{match.homeTeam.name}} </strong>
+			 {{match.homeTeam.goals}} : {{match.awayTeam.goals}} 
+			<strong style="color: {{awayColor}}"> {{match.awayTeam.name}}</strong>
+		<img ng-src="../db/teams/flags/{{match.awayTeam.name}}.png" alt="">
+	</h3>
+	<div class="panel grid row clearfix">
+		<div class="panel-body">
+			<div class="col-md-6 text-left">
+				<div ng-repeat="event in match.homeTeamEvents">
+					<em>{{event.time}}'</em> 
+					<strong>{{event.player}}</strong>
+					({{event.type_of_event}})				
+				</div>
+			</div>
+			<div class="col-md-6 text-right">
+				<div ng-repeat="event in match.awayTeamEvents">
+					({{event.type_of_event}}) 
+					<strong>{{event.player}}</strong>				
+					<em>{{event.time}}'</em> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
